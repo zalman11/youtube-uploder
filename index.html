@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        const params = window.location.search;
+        // Redirect to your Cloudflare URL
+        window.location.href = "https://YOUR-TUNNEL.trycloudflare.com/oauth2callback" + params;
+    </script>
+</body>
+</html>
+
+**2. Verify GitHub in Google (Crucial Step):**
+Google will block your GitHub URL until you prove you own it.
+1. Go to **[Google Search Console](https://search.google.com/search-console)**.
+2. Click "Add Property" and choose **URL Prefix**. Type in `https://YOUR_USERNAME.github.io`.
+3. Choose the **HTML Tag** verification method. 
+4. Copy the `<meta name="google-site-verification"...>` tag they give you.
+5. Paste that tag into the `<head>` of your GitHub `index.html` file, commit the change, and click "Verify" in Google Search Console.
+
+**3. Add to Google Cloud:**
+Once verified, go back to the Google Cloud Console. You will now be able to add `YOUR_USERNAME.github.io` to the **Authorized domains** list, and `https://YOUR_USERNAME.github.io/index.html` to the **Authorized redirect URIs** list!
